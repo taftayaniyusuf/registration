@@ -21,15 +21,6 @@ public class UserController {
 	@Autowired
 	UserRepository repository;
 
-	@GetMapping("/users")
-	User inject() {
-		User user = new User();
-		user.setDob(new Date());
-		user.setEmail("user@mail.com");
-		user.setFirstName("first");
-		return repository.save(user);
-	}
-	
 	@RequestMapping(value = "/saveuser", method = RequestMethod.POST)
 	User save(@RequestBody User requser) {
 		User user = new User();
